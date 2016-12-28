@@ -1,4 +1,4 @@
-#include "Map2D.h"
+﻿#include "Map2D.h"
 
 
 
@@ -30,12 +30,43 @@ bool Map2D::ReadFromFile(std::string Filename)
 			y++;
 		}
 		x = Buffor.length() / y;
-		std::cout << "Y=" << y << std::endl;
-		std::cout << "X=" << x << std::endl;
+		//std::cout << "Y=" << y << std::endl;
+		//std::cout << "X=" << x << std::endl;
 	}
 	else
 	{
 		perror("file TestEntity was not opened");
+	}
+	Generuj(Buffor, x, y);
+	return true;
+}
+
+bool Map2D::Generuj(std::string Dane, int x, int y)
+{
+	int temp=0;
+	Tab = new Pole**[y];
+	for (int i = 0; i < y; i++)
+	{
+		Tab[i] = new Pole*[x];
+		for (int j = 0; j < x; j++)
+		{
+			//Ogromny switch który wybiera odpowiedni obiekt dla każdego znaku
+			switch (Dane[temp])
+			{
+			case '#':
+				Tab[i][j] = new Wall(j,i);
+				std::cout << "Wall at " << j << "," << i << std::endl;
+				break;
+			case ',':
+				Tab[i][j] = new Wall(j, i);
+				std::cout << "Floor at " << j << "," << i << std::endl;
+				break;
+			default:
+				return false;
+					break;
+			}
+			temp++;
+		}
 	}
 	return true;
 }

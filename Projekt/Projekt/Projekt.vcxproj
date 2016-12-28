@@ -115,13 +115,17 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map2D.cpp" />
+    <ClCompile Include="OpenSpace.cpp" />
     <ClCompile Include="Pole.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map2D.h" />
+    <ClInclude Include="OpenSpace.h" />
     <ClInclude Include="Pole.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
