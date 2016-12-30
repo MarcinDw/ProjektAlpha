@@ -17,5 +17,6 @@ public:
 	~Map2D();
 	bool ReadFromFile(std::string Filename);
 	bool Generuj(std::string Dane, int x, int y);
+	void Turn();
 };
 

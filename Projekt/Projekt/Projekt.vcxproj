@@ -113,18 +113,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Gracz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map2D.cpp" />
     <ClCompile Include="OpenSpace.cpp" />
     <ClCompile Include="Pole.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Postac.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Gracz.h" />
     <ClInclude Include="Map2D.h" />
     <ClInclude Include="OpenSpace.h" />
     <ClInclude Include="Pole.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Postac.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

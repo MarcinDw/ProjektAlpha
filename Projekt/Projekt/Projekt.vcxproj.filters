@@ -36,6 +36,12 @@
     <ClCompile Include="OpenSpace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Postac.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gracz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Position.h">
@@ -51,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OpenSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Postac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gracz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

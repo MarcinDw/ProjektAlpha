@@ -70,3 +70,14 @@ bool Map2D::Generuj(std::string Dane, int x, int y)
 	}
 	return true;
 }
+
+void Map2D::Turn()
+{
+	for (int i = 0; i < y; i++)
+	{
+		for (int j = 0; j < x; j++)
+		{
+			Tab[i][j]->Tick();
+		}
+	}
+}
