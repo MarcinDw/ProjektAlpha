@@ -18,6 +18,7 @@ void Wall::Interact()
 
 void Wall::Tick()
 {
+	std::cout << '#';
 	//Tutaj wpisać co się dzieje za każdym razem jak postać się ruszy (Nie wiem jak będziesz robić dynamiczne oświetlenie ale może się przydać)
 }
 

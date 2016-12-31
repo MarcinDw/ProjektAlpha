@@ -5,6 +5,7 @@ class OpenSpace :
 {
 public:
 	OpenSpace();
+	OpenSpace(int x, int y);
 	~OpenSpace();
 	void Interact();
 	void Tick();

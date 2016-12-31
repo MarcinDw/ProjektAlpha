@@ -12,6 +12,7 @@ protected:
 	int DamageMax;
 	int Crit;
 	int CritMulti;
+	Pole* Below;
 public:
 	Postac();
 	~Postac();
@@ -21,6 +22,7 @@ public:
 	virtual void Tick();
 	virtual bool TakeDamage(int DMG);
 	virtual bool Attack(Postac P);
-	virtual Pole* Deathrattle(Pole* Pol);
+	virtual void Deathrattle(Pole *** Tabela);
+	virtual void Move(Pole *** Tabela, Position cel);
 };
 

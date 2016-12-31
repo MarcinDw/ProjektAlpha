@@ -58,7 +58,7 @@ bool Map2D::Generuj(std::string Dane, int x, int y)
 				std::cout << "Wall at " << j << "," << i << std::endl;
 				break;
 			case ',':
-				Tab[i][j] = new Wall(j, i);
+				Tab[i][j] = new OpenSpace(j,i);
 				std::cout << "Floor at " << j << "," << i << std::endl;
 				break;
 			default:
@@ -79,5 +79,6 @@ void Map2D::Turn()
 		{
 			Tab[i][j]->Tick();
 		}
+		std::cout << std::endl;
 	}
 }

@@ -5,6 +5,8 @@ class Gracz :
 {
 public:
 	Gracz();
+	Gracz(int x, int y);
 	~Gracz();
+
 };
 
