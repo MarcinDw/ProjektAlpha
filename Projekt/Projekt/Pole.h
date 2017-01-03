@@ -12,5 +12,6 @@ public:
 	virtual bool GetMoveBlock();
 	virtual bool GetVisionBlock();
 	~Pole();
+	virtual void Move(Pole *** Tabela, Position cel);
 };
 

@@ -55,11 +55,13 @@ bool Map2D::Generuj(std::string Dane, int x, int y)
 			{
 			case '#':
 				Tab[i][j] = new Wall(j,i);
-				std::cout << "Wall at " << j << "," << i << std::endl;
 				break;
 			case ',':
 				Tab[i][j] = new OpenSpace(j,i);
-				std::cout << "Floor at " << j << "," << i << std::endl;
+				break;
+			case '@':
+				Tab[i][j] = new Gracz(j, i);
+				PlayerPosition.MoveTo(i, j);
 				break;
 			default:
 				return false;
@@ -69,6 +71,16 @@ bool Map2D::Generuj(std::string Dane, int x, int y)
 		}
 	}
 	return true;
+}
+
+Pole *** Map2D::GetTab()
+{
+	return Tab;
+}
+
+Position Map2D::GetPlayerPosition()
+{
+	return PlayerPosition;
 }
 
 void Map2D::Turn()

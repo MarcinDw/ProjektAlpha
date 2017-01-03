@@ -1,5 +1,6 @@
 #pragma once
 #include "Pole.h"
+#include "OpenSpace.h"
 class Postac :
 	public Pole
 {
@@ -15,6 +16,7 @@ protected:
 	Pole* Below;
 public:
 	Postac();
+	Postac(int x, int y);
 	~Postac();
 	virtual bool GetMoveBlock();
 	virtual bool GetVisionBlock();

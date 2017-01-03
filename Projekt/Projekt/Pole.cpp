@@ -24,3 +24,8 @@ bool Pole::GetVisionBlock()
 Pole::~Pole()
 {
 }
+
+void Pole::Move(Pole*** Tabela, Position cel)
+{
+	perror("To pole nie moze sie ruszyc");
+}

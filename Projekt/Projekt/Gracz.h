@@ -7,6 +7,6 @@ public:
 	Gracz();
 	Gracz(int x, int y);
 	~Gracz();
-
+	void Tick();
 };
 

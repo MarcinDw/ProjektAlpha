@@ -1,15 +1,58 @@
 #include "Position.h"
+#include "allegro5\allegro.h"
+#include "allegro5\allegro_primitives.h"
 #include<stdio.h>
 #include "Map2D.h"
 #include "Postac.h"
+#include "Control.h"
+
+
+// ToDo add error protection
+bool initAll()
+{
+	if (!(al_init()))
+	{
+		return 0;
+		perror("al_init");
+	}
+	if (!(al_init_primitives_addon()))
+	{
+		perror("al_init_primitives_addon");
+		return 0;
+	}
+	if (!(al_install_keyboard()))
+	{
+		perror("al_install_keyboard");
+		return 0;
+	}
+	if (!(al_install_mouse()))
+	{
+		perror("al_install_mouse");
+		return 0;
+	}
+	return 1;
+	//al_init_font_addon();
+	//al_init_image_addon();
+	//al_init_ttf_addon();
+}
+
+
 int main()
 {
+	if (!(initAll()))
+	{
+		return 1;
+	}
+
 	Map2D Test;
-	Postac P1, P2;
+	Control CTRL;
+
 	Test.ReadFromFile("MapTest.txt");
-	Test.Turn();
-	P1.Attack(P2);
-	P1.Attack(P2);
+	do
+	{
+		Test.Turn();
+	} while (CTRL.WaitForInput(Test.GetTab(),Test.GetPlayerPosition()));
+
 
 	return 0;
 }

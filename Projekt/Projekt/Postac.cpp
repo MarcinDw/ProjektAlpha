@@ -4,6 +4,11 @@
 
 Postac::Postac()
 {
+
+}
+
+Postac::Postac(int x, int y) :Pole(x, y)
+{
 	Attk = 0;
 	Defense = 0;
 	DamageMin = 1;
@@ -12,8 +17,8 @@ Postac::Postac()
 	CritMulti = 2;
 	MaxHP = 20;
 	HP = 20;
+	Below = new OpenSpace(x,y);
 }
-
 Postac::~Postac()
 {
 }
@@ -78,5 +83,6 @@ void Postac::Move(Pole*** Tabela,Position cel)
 {
 	Pole * temp = Below;
 	Below = Tabela[cel.x][cel.y];
-	Tabela[cel.x][cel.y]=temp;
+	Tabela[Pos.x][Pos.y]=temp;
+	Pos = cel;
 }
