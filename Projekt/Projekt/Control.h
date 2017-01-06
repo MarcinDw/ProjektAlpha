@@ -7,6 +7,6 @@ class Control
 public:
 	Control();
 	~Control();
-	bool WaitForInput(Pole*** Tab, Position Player);
+	bool WaitForInput(Pole*** Tab, Position &Player);
 };
 

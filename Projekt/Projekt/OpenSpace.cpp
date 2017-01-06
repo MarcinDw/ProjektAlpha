@@ -16,6 +16,7 @@ OpenSpace::~OpenSpace()
 
 void OpenSpace::Interact()
 {
+
 }
 
 void OpenSpace::Tick()

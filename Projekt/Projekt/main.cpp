@@ -44,14 +44,17 @@ int main()
 		return 1;
 	}
 
+	ALLEGRO_DISPLAY* Display = al_create_display(800, 600);
 	Map2D Test;
 	Control CTRL;
+	Position PlayerPosition;
 
 	Test.ReadFromFile("MapTest.txt");
+	PlayerPosition = Test.GetPlayerPosition();
 	do
 	{
 		Test.Turn();
-	} while (CTRL.WaitForInput(Test.GetTab(),Test.GetPlayerPosition()));
+	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
 
 
 	return 0;

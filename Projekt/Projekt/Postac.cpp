@@ -83,6 +83,7 @@ void Postac::Move(Pole*** Tabela,Position cel)
 {
 	Pole * temp = Below;
 	Below = Tabela[cel.x][cel.y];
+	Tabela[cel.x][cel.y] = Tabela[Pos.x][Pos.y];
 	Tabela[Pos.x][Pos.y]=temp;
 	Pos = cel;
 }
