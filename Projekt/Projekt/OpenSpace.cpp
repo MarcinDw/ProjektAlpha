@@ -24,6 +24,11 @@ void OpenSpace::Tick()
 	std::cout << ',';
 }
 
+char OpenSpace::GetType()
+{
+	return '#';
+}
+
 bool OpenSpace::GetMoveBlock()
 {
 	return false;

@@ -78,6 +78,16 @@ Pole *** Map2D::GetTab()
 	return Tab;
 }
 
+int Map2D::Getx()
+{
+	return x;
+}
+
+int Map2D::Gety()
+{
+	return y;
+}
+
 Position Map2D::GetPlayerPosition()
 {
 	return PlayerPosition;

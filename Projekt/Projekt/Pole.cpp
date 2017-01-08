@@ -21,6 +21,11 @@ bool Pole::GetVisionBlock()
 	return true;
 }
 
+char Pole::GetType()
+{
+	return 0;
+}
+
 Pole::~Pole()
 {
 }

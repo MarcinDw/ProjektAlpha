@@ -9,6 +9,7 @@ public:
 	~OpenSpace();
 	void Interact();
 	void Tick();
+	char GetType();
 	bool GetMoveBlock();
 	bool GetVisionBlock();
 };

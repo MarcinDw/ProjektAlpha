@@ -20,6 +20,8 @@ public:
 	bool ReadFromFile(std::string Filename);
 	bool Generuj(std::string Dane, int x, int y);
 	Pole*** GetTab();
+	int Getx();
+	int Gety();
 	Position GetPlayerPosition();
 	void Turn();
 };

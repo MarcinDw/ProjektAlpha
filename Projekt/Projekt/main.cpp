@@ -5,8 +5,7 @@
 #include "Map2D.h"
 #include "Postac.h"
 #include "Control.h"
-
-
+#include "DijkstraMap.h"
 // ToDo add error protection
 bool initAll()
 {
@@ -51,9 +50,12 @@ int main()
 
 	Test.ReadFromFile("MapTest.txt");
 	PlayerPosition = Test.GetPlayerPosition();
+	DijkstraMap AITest(Test.Getx(),Test.Gety(),PlayerPosition,Test.GetTab());
 	do
 	{
 		Test.Turn();
+		AITest.Generate(PlayerPosition, Test.GetTab());
+		AITest.Pisz();
 	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
 
 
