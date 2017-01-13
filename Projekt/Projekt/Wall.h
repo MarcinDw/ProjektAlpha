@@ -7,7 +7,8 @@ public:
 	Wall();
 	Wall(int x, int y);
 	void Interact();
-	void Tick();
+	void Tick(int maxx, int maxy, Pole *** Tabela);
 	~Wall();
+	void Display();
 };
 

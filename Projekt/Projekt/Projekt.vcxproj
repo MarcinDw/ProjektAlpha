@@ -165,6 +165,7 @@
     <ClCompile Include="Gracz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map2D.cpp" />
+    <ClCompile Include="Melee.cpp" />
     <ClCompile Include="OpenSpace.cpp" />
     <ClCompile Include="Pole.cpp" />
     <ClCompile Include="Position.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="DijkstraMap.h" />
     <ClInclude Include="Gracz.h" />
     <ClInclude Include="Map2D.h" />
+    <ClInclude Include="Melee.h" />
     <ClInclude Include="OpenSpace.h" />
     <ClInclude Include="Pole.h" />
     <ClInclude Include="Position.h" />

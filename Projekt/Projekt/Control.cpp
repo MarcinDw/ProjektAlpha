@@ -23,9 +23,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 	ALLEGRO_EVENT eve;
 	do
 	{
-		perror ("Why?");
 		al_wait_for_event(que, &eve);
-		perror("You not work");
 	}
 	while (eve.type != ALLEGRO_EVENT_KEY_DOWN);
 

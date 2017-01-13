@@ -8,9 +8,10 @@ public:
 	OpenSpace(int x, int y);
 	~OpenSpace();
 	void Interact();
-	void Tick();
+	void Tick(Pole *** Tabela);
 	char GetType();
 	bool GetMoveBlock();
 	bool GetVisionBlock();
+	void Display();
 };
 

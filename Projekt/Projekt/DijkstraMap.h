@@ -4,16 +4,19 @@
 #include <iomanip>
 class DijkstraMap
 {
-	Pole***Tabela;
+	Pole*** Tabela;
 	int ** Map;
+	int AsignedValues;
 	int maxx;
 	int maxy;
 public:
 	DijkstraMap();
-	DijkstraMap(int maxx, int maxy, Position PCPos, Pole*** Mapa);
+	DijkstraMap(int maxx, int maxy);
 	~DijkstraMap();
-	void Generate(Position PCPos, Pole*** Mapa);
+	void Generate(Pole *** Mapa);
+	void AssignStart();
+	void AssignPriority(char znak, int wartosc, Pole *** Mapa);
 	int Nextto(int x,int y);
+	Position Min(Position Pos);
 	void Pisz();
 };
-

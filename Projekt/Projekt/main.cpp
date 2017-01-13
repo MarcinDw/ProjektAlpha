@@ -47,15 +47,16 @@ int main()
 	Map2D Test;
 	Control CTRL;
 	Position PlayerPosition;
-
+	Melee ZombieTest;
+	bool TestBool;
+	
+	TestBool=ZombieTest.GetMoveBlock();
 	Test.ReadFromFile("MapTest.txt");
 	PlayerPosition = Test.GetPlayerPosition();
-	DijkstraMap AITest(Test.Getx(),Test.Gety(),PlayerPosition,Test.GetTab());
 	do
 	{
-		Test.Turn();
-		AITest.Generate(PlayerPosition, Test.GetTab());
-		AITest.Pisz();
+		Test.ListaTest();
+		Test.Display();
 	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
 
 

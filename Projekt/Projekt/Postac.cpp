@@ -37,7 +37,7 @@ void Postac::Interact()
 {
 }
 
-void Postac::Tick()
+void Postac::Tick(int maxx, int maxy, Pole *** Tabela)
 {
 }
 
@@ -74,6 +74,7 @@ bool Postac::Attack(Postac P)
 	return false;
 }
 
+
 void Postac::Deathrattle(Pole*** Tabela)
 {
 	Tabela[Pos.x][Pos.y] = Below;
@@ -86,4 +87,8 @@ void Postac::Move(Pole*** Tabela,Position cel)
 	Tabela[cel.x][cel.y] = Tabela[Pos.x][Pos.y];
 	Tabela[Pos.x][Pos.y]=temp;
 	Pos = cel;
+}
+
+void Postac::Display()
+{
 }

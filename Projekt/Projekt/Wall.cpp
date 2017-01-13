@@ -16,13 +16,15 @@ void Wall::Interact()
 	//Tu wpisać co się stanie jak postać będzie chiała na to wejść (Jakiś dźwięk albo coś takiego żeby było wiadomo że coś się dieje)
 }
 
-void Wall::Tick()
+void Wall::Tick(int maxx, int maxy, Pole *** Tabela)
 {
-	std::cout << '#';
-	//Tutaj wpisać co się dzieje za każdym razem jak postać się ruszy (Nie wiem jak będziesz robić dynamiczne oświetlenie ale może się przydać)
 }
-
 
 Wall::~Wall()
 {
+}
+
+void Wall::Display()
+{
+	std::cout << '#';
 }

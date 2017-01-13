@@ -15,8 +15,21 @@ Gracz::~Gracz()
 {
 }
 
-void Gracz::Tick()
+void Gracz::Tick(int maxx, int maxy, Pole *** Tabela)
+{
+}
+
+void Gracz::Interact()
+{
+	std::cout << std::endl << "Gracz trafiony" << std::endl;
+}
+
+char Gracz::GetType()
+{
+	return '@';
+}
+
+void Gracz::Display()
 {
 	std::cout << '@';
 }
-

@@ -7,6 +7,9 @@ public:
 	Gracz();
 	Gracz(int x, int y);
 	~Gracz();
-	void Tick();
+	void Tick(int maxx, int maxy, Pole *** Tabela);
+	void Interact();
+	virtual char GetType();
+	void Display();
 };
 
