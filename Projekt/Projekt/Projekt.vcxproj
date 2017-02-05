@@ -163,6 +163,7 @@
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="DijkstraMap.cpp" />
     <ClCompile Include="Gracz.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map2D.cpp" />
     <ClCompile Include="Melee.cpp" />
@@ -171,11 +172,13 @@
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Postac.cpp" />
     <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Control.h" />
     <ClInclude Include="DijkstraMap.h" />
     <ClInclude Include="Gracz.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Map2D.h" />
     <ClInclude Include="Melee.h" />
     <ClInclude Include="OpenSpace.h" />
@@ -183,6 +186,7 @@
     <ClInclude Include="Position.h" />
     <ClInclude Include="Postac.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

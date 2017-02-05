@@ -11,5 +11,7 @@ public:
 	void Interact();
 	virtual char GetType();
 	void Display();
+	void Move(Pole *** Tabela, Position cel);
+	bool TakeDamage(int DMG);
 };
 

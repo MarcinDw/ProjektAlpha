@@ -14,7 +14,7 @@ OpenSpace::~OpenSpace()
 {
 }
 
-void OpenSpace::Interact()
+void OpenSpace::Interact(Pole* Source)
 {
 
 }
@@ -25,7 +25,7 @@ void OpenSpace::Tick(Pole *** Tabela)
 
 char OpenSpace::GetType()
 {
-	return '#';
+	return ',';
 }
 
 bool OpenSpace::GetMoveBlock()
@@ -40,5 +40,12 @@ bool OpenSpace::GetVisionBlock()
 
 void OpenSpace::Display()
 {
-	std::cout << ',';
+	if (Visible)
+	{
+		std::cout << ',';
+	}
+	else
+	{
+		std::cout << ' ';
+	}
 }

@@ -101,23 +101,49 @@ void Map2D::ListaTest()
 {
 	for (it = Lista.begin(); it != Lista.end(); it++)
 	{
-		(*it)->Tick(x,y,Tab);
+			(*it)->Tick(x, y, Tab);
 	}
 }
 
+
 void Map2D::Turn()
+{
+	Lista.clear();
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			if (Tab[i][j]->GetType() == 'z')
+			{
+				if (Tab[i][j]->GetVisible() == 1)
+				{
+					Lista.push_back(Tab[i][j]);
+				}
+			}
+		}
+	}
+	ListaTest();
+}
+
+void Map2D::UpdatePlayerPosition(Position PPos)
+{
+	PlayerPosition = PPos;
+}
+
+void Map2D::ClearVision()
 {
 	for (int i = 0; i < x; i++)
 	{
 		for (int j = 0; j < y; j++)
 		{
-			Tab[i][j]->Tick(x,y,Tab);
+			Tab[i][j]->ChangeVision(false);
 		}
 	}
 }
 
 void Map2D::Display()
 {
+	MapVision(5);
 	for (int i = 0; i < x; i++)
 	{
 		for (int j = 0; j < y; j++)
@@ -126,4 +152,33 @@ void Map2D::Display()
 		}
 		std::cout << std::endl;
 	}
+}
+
+void Map2D::MapVision(float Range)
+{
+	float x, y;
+	int i;
+	ClearVision();
+	for (i = 0; i<360; i++)
+	{
+		x = cos((float)i*0.01745f);
+		y = sin((float)i*0.01745f);
+		Ray(x, y,Range);
+	};
+}
+
+void Map2D::Ray(float x, float y, float Range)
+{
+	int i;
+	float ox, oy;
+	ox = (float)PlayerPosition.x + 0.5f;
+	oy = (float)PlayerPosition.y + 0.5f;
+	for (i = 0; i<Range; i++)
+	{
+		Tab[(int)ox][(int)oy]->ChangeVision(true);
+		if (Tab[(int)ox][(int)oy]->GetVisionBlock())
+			return;
+		ox += x;
+		oy += y;
+	};
 }

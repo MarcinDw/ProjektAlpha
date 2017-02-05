@@ -6,7 +6,7 @@ class Wall :
 public:
 	Wall();
 	Wall(int x, int y);
-	void Interact();
+	void Interact(Pole* Source);
 	void Tick(int maxx, int maxy, Pole *** Tabela);
 	~Wall();
 	void Display();

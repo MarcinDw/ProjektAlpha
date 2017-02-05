@@ -9,6 +9,7 @@ Pole::Pole()
 Pole::Pole(int x, int y)
 {
 	Pos.MoveTo(x, y);
+	FoW = true;
 }
 
 void Pole::Tick(int maxx, int maxy, Pole *** Tabela)
@@ -23,6 +24,25 @@ bool Pole::GetMoveBlock()
 bool Pole::GetVisionBlock()
 {
 	return true;
+}
+
+void Pole::ChangeVision(bool V)
+{
+	Visible=V;
+	if (Visible)
+	{
+		FoW = false;
+	}
+}
+
+bool Pole::GetVisible()
+{
+	return Visible;
+}
+
+bool Pole::GetFoW()
+{
+	return FoW;
 }
 
 char Pole::GetType()

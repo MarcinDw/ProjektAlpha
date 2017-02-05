@@ -37,7 +37,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x + 1][Player.y - 1]->Interact();
+			Tab[Player.x + 1][Player.y - 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_2:
@@ -48,7 +48,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x + 1][Player.y]->Interact();
+			Tab[Player.x + 1][Player.y]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_3:
@@ -59,7 +59,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x + 1][Player.y + 1]->Interact();
+			Tab[Player.x + 1][Player.y + 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_4:
@@ -70,10 +70,10 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x][Player.y - 1]->Interact();
+			Tab[Player.x][Player.y - 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
-	case ALLEGRO_KEY_PAD_5:Tab[Player.x][Player.y]->Interact();
+	case ALLEGRO_KEY_PAD_5:Tab[Player.x][Player.y]->Interact(Tab[Player.x][Player.y]);
 		break;
 	case ALLEGRO_KEY_PAD_6:
 		if (!(Tab[Player.x][Player.y + 1]->GetMoveBlock()))
@@ -83,7 +83,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x][Player.y + 1]->Interact();
+			Tab[Player.x][Player.y + 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_7:
@@ -94,7 +94,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x - 1][Player.y - 1]->Interact();
+			Tab[Player.x - 1][Player.y - 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_8:
@@ -105,7 +105,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x - 1][Player.y]->Interact();
+			Tab[Player.x - 1][Player.y]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_PAD_9:
@@ -116,7 +116,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 		}
 		else
 		{
-			Tab[Player.x - 1][Player.y + 1]->Interact();
+			Tab[Player.x - 1][Player.y + 1]->Interact(Tab[Player.x][Player.y]);
 		}
 		break;
 	case ALLEGRO_KEY_ESCAPE: 

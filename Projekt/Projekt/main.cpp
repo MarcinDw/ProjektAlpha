@@ -55,7 +55,8 @@ int main()
 	PlayerPosition = Test.GetPlayerPosition();
 	do
 	{
-		Test.ListaTest();
+		Test.UpdatePlayerPosition(PlayerPosition);
+		Test.Turn();
 		Test.Display();
 	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
 

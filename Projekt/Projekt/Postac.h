@@ -22,10 +22,10 @@ public:
 	~Postac();
 	virtual bool GetMoveBlock();
 	virtual bool GetVisionBlock();
-	virtual void Interact();
+	virtual void Interact(Pole* Source);
 	virtual void Tick(int maxx, int maxy, Pole *** Tabela);
 	virtual bool TakeDamage(int DMG);
-	virtual bool Attack(Postac P);
+	virtual bool Attack(Postac* P);
 	virtual void Deathrattle(Pole *** Tabela);
 	virtual void Move(Pole *** Tabela, Position cel);
 	virtual void Display();

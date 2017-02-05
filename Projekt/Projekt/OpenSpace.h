@@ -7,7 +7,7 @@ public:
 	OpenSpace();
 	OpenSpace(int x, int y);
 	~OpenSpace();
-	void Interact();
+	void Interact(Pole* Source);
 	void Tick(Pole *** Tabela);
 	char GetType();
 	bool GetMoveBlock();

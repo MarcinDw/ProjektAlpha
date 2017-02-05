@@ -32,7 +32,7 @@ void DijkstraMap::Generate(Pole *** Mapa)
 	while (size > 0 && iterations!=0)
 	{
 		iterations--;
-		Pisz();
+		//Pisz();
 		for (int y = 0; y < maxy; y++)
 		{
 			for (int x = 0; x < maxx; x++)
@@ -151,7 +151,7 @@ int DijkstraMap::Nextto(int x, int y)
 Position DijkstraMap::Min(Position Pos)
 {
 		int min = 2003;
-		Pisz();
+		//Pisz();
 		bool first, second;
 		first = (Pos.y-1 > 0);
 		second = (Pos.y+1 < maxy);
