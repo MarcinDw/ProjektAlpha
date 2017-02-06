@@ -2,6 +2,11 @@
 
 
 
+std::string Item::GetName()
+{
+	return Nazwa;
+}
+
 Item::Item()
 {
 }

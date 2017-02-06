@@ -84,3 +84,8 @@ void Postac::Move(Pole*** Tabela,Position cel)
 void Postac::Display()
 {
 }
+
+int Postac::GetAC()
+{
+	return Defense;
+}

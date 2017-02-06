@@ -6,6 +6,7 @@ class Pole
 	Position Pos;
 	bool Visible;
 	bool FoW;
+	char Type;
 public:
 	Pole();
 	Pole(int x,int y);

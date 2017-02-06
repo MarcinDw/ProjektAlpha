@@ -1,7 +1,10 @@
 #include "Position.h"
 #include "allegro5\allegro.h"
 #include "allegro5\allegro_primitives.h"
+#include <cstdlib> 
 #include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "Map2D.h"
 #include "Postac.h"
 #include "Control.h"
@@ -50,11 +53,13 @@ int main()
 	Melee ZombieTest;
 	bool TestBool;
 	
+	srand(time(NULL));
 	TestBool=ZombieTest.GetMoveBlock();
 	Test.ReadFromFile("MapTest.txt");
 	PlayerPosition = Test.GetPlayerPosition();
 	do
 	{
+		//system("CLS");
 		Test.UpdatePlayerPosition(PlayerPosition);
 		Test.Turn();
 		Test.Display();

@@ -1,0 +1,53 @@
+[Dagger]
+Value = 2
+MinDamage = 1
+MaxDamage = 4
+Crit = 10
+CritMulti = 2
+DamageType = S
+Type = O
+
+[Club]
+Value = 0
+MinDamage = 1
+MaxDamage = 6
+Crit = 5
+CritMulti = 2
+DamageType = B
+Type = O
+
+[Shortspear]
+Value = 1
+MinDamage = 1
+MaxDamage = 6
+Crit = 5
+CritMulti = 2
+DamageType = P
+Type = O
+
+[Earthbreaker]
+Value = 40
+MinDamage = 2
+MaxDamage = 12
+Crit = 5
+CritMulti = 3
+DamageType = B
+Type = T
+
+[Greataxe]
+Value = 20
+MinDamage = 1
+MaxDamage = 12
+Crit = 5
+CritMulti = 3
+DamageType = S
+Type = T
+
+[Scythe]
+Value = 18
+MinDamage = 2
+MaxDamage = 8
+Crit = 5
+CritMulti = 4
+DamageType = S
+Type = T

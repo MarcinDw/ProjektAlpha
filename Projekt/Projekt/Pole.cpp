@@ -47,11 +47,19 @@ bool Pole::GetFoW()
 
 char Pole::GetType()
 {
-	return 0;
+	return Type;
 }
 
 void Pole::Display()
 {
+	if (Visible)
+	{
+		std::cout << GetType();
+	}
+	else
+	{
+		std::cout << ' ';
+	}
 }
 
 Pole::~Pole()

@@ -160,6 +160,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="DijkstraMap.cpp" />
     <ClCompile Include="Gracz.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="DijkstraMap.h" />
     <ClInclude Include="Gracz.h" />

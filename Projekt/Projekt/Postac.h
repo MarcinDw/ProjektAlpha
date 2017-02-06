@@ -29,5 +29,6 @@ public:
 	virtual void Deathrattle(Pole *** Tabela);
 	virtual void Move(Pole *** Tabela, Position cel);
 	virtual void Display();
+	virtual int GetAC();
 };
 

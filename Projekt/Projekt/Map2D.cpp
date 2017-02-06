@@ -56,6 +56,9 @@ bool Map2D::Generuj(std::string Dane, int x, int y)
 			case '#':
 				Tab[i][j] = new Wall(i,j);
 				break;
+			case 'C':
+				Tab[i][j] = new Box(i, j);
+				break;
 			case ',':
 				Tab[i][j] = new OpenSpace(i,j);
 				break;

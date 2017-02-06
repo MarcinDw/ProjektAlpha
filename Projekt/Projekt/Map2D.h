@@ -9,6 +9,7 @@
 #include "Melee.h"
 #include "OpenSpace.h"
 #include "Gracz.h"
+#include "Box.h"
 class Map2D
 {
 protected:
