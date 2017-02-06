@@ -4,6 +4,7 @@
 
 void Box::Interact(Pole * Source)
 {
+	Control con;
 	if (Source->GetType() == '@')
 	{
 		Gracz* Player = dynamic_cast<Gracz*>(Source);
@@ -15,7 +16,7 @@ void Box::Interact(Pole * Source)
 			i++;
 		}
 		std::cout << i << " " << "exit" << std::endl;
-		std::cin >> j;
+		con.GetNumber();
 		if ((j < i) && (j >= 0))
 		{
 			i = 0;

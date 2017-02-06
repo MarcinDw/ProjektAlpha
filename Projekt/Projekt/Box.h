@@ -3,6 +3,7 @@
 #include "Item.h"
 #include <list>
 #include "Gracz.h"
+#include "Control.h"
 class Box :
 	public Pole
 {

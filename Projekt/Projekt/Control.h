@@ -8,5 +8,6 @@ public:
 	Control();
 	~Control();
 	bool WaitForInput(Pole*** Tab, Position &Player);
+	int GetNumber();
 };
 

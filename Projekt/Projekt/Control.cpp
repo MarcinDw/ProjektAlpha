@@ -126,3 +126,37 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 	}
 	return true;
 }
+
+int Control::GetNumber()
+{
+	ALLEGRO_EVENT eve;
+	do
+	{
+		al_wait_for_event(que, &eve);
+	} while (eve.type != ALLEGRO_EVENT_KEY_DOWN);
+
+	switch (eve.keyboard.keycode)
+	{
+	case ALLEGRO_KEY_PAD_1:
+		return 1;
+	case ALLEGRO_KEY_PAD_2:
+		return 2;
+	case ALLEGRO_KEY_PAD_3:
+		return 3;
+	case ALLEGRO_KEY_PAD_4:
+		return 4;
+	case ALLEGRO_KEY_PAD_5:
+		return 5;
+	case ALLEGRO_KEY_PAD_6:
+		return 6;
+	case ALLEGRO_KEY_PAD_7:
+		return 7;
+	case ALLEGRO_KEY_PAD_8:
+		return 8;
+	case ALLEGRO_KEY_PAD_9:
+		return 9;
+	case ALLEGRO_KEY_PAD_0:
+		return 0;
+	}
+	return 0;
+}
