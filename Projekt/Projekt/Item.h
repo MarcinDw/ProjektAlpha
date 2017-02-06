@@ -10,6 +10,7 @@ protected:
 	char Type;// O-One handed weapon T-Two handed weapon A-Armor Q-Amulet S-Shield
 public:
 	virtual std::string GetName();
+	char GetType();
 	Item();
 	~Item();
 };

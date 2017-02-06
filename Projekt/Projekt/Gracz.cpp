@@ -24,6 +24,12 @@ Gracz::~Gracz()
 
 void Gracz::Tick(int maxx, int maxy, Pole *** Tabela)
 {
+	if (HP < 1)
+	{
+		std::cout << "Gracz zostal pokonany";
+		al_rest(3);
+		exit(0);
+	}
 }
 
 void Gracz::Interact()
@@ -106,7 +112,8 @@ bool Gracz::Attack(Postac * P)
 Item * Gracz::Equip(Item* toeq)
 {
 	Item* Temp;
-	Temp = Equiped;
-	Equiped = dynamic_cast<Weapon*>(toeq);
+	if(toeq)
+	Temp = EquipedWeapon;
+	EquipedWeapon = dynamic_cast<Weapon*>(toeq);
 	return Temp;
 }

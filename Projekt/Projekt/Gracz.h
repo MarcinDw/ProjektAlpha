@@ -5,7 +5,7 @@ class Gracz :
 	public Postac
 {
 protected:
-	Weapon* Equiped;
+	Weapon* EquipedWeapon;
 public:
 	Gracz();
 	Gracz(int x, int y);
