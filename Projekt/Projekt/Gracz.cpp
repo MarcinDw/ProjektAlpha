@@ -73,7 +73,7 @@ bool Gracz::TakeDamage(int DMG)
 bool Gracz::Attack(Postac * P)
 {
 	int Roll = rand() % 100;
-	if (Equiped == NULL)
+	if (EquipedWeapon == NULL)
 	{
 		if ((Attk + Roll) > P->GetAC())
 		{
@@ -92,12 +92,12 @@ bool Gracz::Attack(Postac * P)
 	}
 	else
 	{
-		if ((Attk + Roll+Equiped->Attack) > P->GetAC())
+		if ((Attk + Roll+ EquipedWeapon->Attack) > P->GetAC())
 		{
-			int Damage = rand() % (Equiped->MaxDamage - Equiped->MinDamage) + Equiped->MinDamage;
-			if (Roll > 100 - Equiped->Crit)
+			int Damage = rand() % (EquipedWeapon->MaxDamage - EquipedWeapon->MinDamage) + EquipedWeapon->MinDamage;
+			if (Roll > 100 - EquipedWeapon->Crit)
 			{
-				P->TakeDamage(Damage*Equiped->CritMulti);
+				P->TakeDamage(Damage*EquipedWeapon->CritMulti);
 			}
 			else
 			{
@@ -111,7 +111,7 @@ bool Gracz::Attack(Postac * P)
 
 Item * Gracz::Equip(Item* toeq)
 {
-	Item* Temp;
+	Item* Temp=NULL;
 	if(toeq)
 	Temp = EquipedWeapon;
 	EquipedWeapon = dynamic_cast<Weapon*>(toeq);

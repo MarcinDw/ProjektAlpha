@@ -11,6 +11,11 @@ Map2D::Map2D()
 
 Map2D::~Map2D()
 {
+	for (int i = 0; i < x; i++)
+	{
+		delete(Tab[x]);
+	}
+	delete(Tab);
 }
 
 bool Map2D::ReadFromFile(std::string Filename)
@@ -20,7 +25,7 @@ bool Map2D::ReadFromFile(std::string Filename)
 	std::string Temp;
 	std::ifstream savefile;
 	savefile.open(Filename);
-	perror("Entityopen");
+	//perror("Entityopen");
 	if (savefile.is_open())
 	{
 		while (!(savefile.eof()))
@@ -29,7 +34,8 @@ bool Map2D::ReadFromFile(std::string Filename)
 			Buffor += Temp;
 			x++;
 		}
-		y = Buffor.length() / x;
+		y = (Buffor.length() / x)+1;
+		x--;
 		//std::cout << "Y=" << y << std::endl;
 		//std::cout << "X=" << x << std::endl;
 	}
@@ -146,7 +152,7 @@ void Map2D::ClearVision()
 
 void Map2D::Display()
 {
-	MapVision(5);
+	MapVision(20);
 	for (int i = 0; i < x; i++)
 	{
 		for (int j = 0; j < y; j++)
@@ -170,7 +176,7 @@ void Map2D::MapVision(float Range)
 	};
 }
 
-void Map2D::Ray(float x, float y, float Range)
+void Map2D::Ray(float ix, float iy, float Range)
 {
 	int i;
 	float ox, oy;
@@ -178,10 +184,13 @@ void Map2D::Ray(float x, float y, float Range)
 	oy = (float)PlayerPosition.y + 0.5f;
 	for (i = 0; i<Range; i++)
 	{
-		Tab[(int)ox][(int)oy]->ChangeVision(true);
-		if (Tab[(int)ox][(int)oy]->GetVisionBlock())
-			return;
-		ox += x;
-		oy += y;
+		if ((ox > 0) && (oy > 0) && (ox < x) && (oy < y))
+		{
+			Tab[(int)ox][(int)oy]->ChangeVision(true);
+			if (Tab[(int)ox][(int)oy]->GetVisionBlock())
+				return;
+			ox += ix;
+			oy += iy;
+		}
 	};
 }

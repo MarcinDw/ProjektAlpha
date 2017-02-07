@@ -8,7 +8,7 @@ Wall::Wall()
 
 Wall::Wall(int x, int y):Pole(x,y)
 {
-
+	Type = '#';
 }
 
 void Wall::Interact(Pole* Source)
@@ -22,16 +22,4 @@ void Wall::Tick(int maxx, int maxy, Pole *** Tabela)
 
 Wall::~Wall()
 {
-}
-
-void Wall::Display()
-{
-	if (Visible)
-	{
-		std::cout << '#';
-	}
-	else
-	{
-		std::cout << ' ';
-	}
 }

@@ -9,6 +9,5 @@ public:
 	void Interact(Pole* Source);
 	void Tick(int maxx, int maxy, Pole *** Tabela);
 	~Wall();
-	void Display();
 };
 

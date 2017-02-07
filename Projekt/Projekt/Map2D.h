@@ -35,6 +35,6 @@ public:
 	void ClearVision();
 	void Display();
 	void MapVision(float Range);
-	void Ray(float x, float y, float Range);
+	void Ray(float ix, float iy, float Range);
 };
 

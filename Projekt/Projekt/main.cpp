@@ -9,6 +9,7 @@
 #include "Postac.h"
 #include "Control.h"
 #include "DijkstraMap.h"
+#include "CaveMapGen.h"
 // ToDo add error protection
 bool initAll()
 {
@@ -52,10 +53,12 @@ int main()
 	Position PlayerPosition;
 	Melee ZombieTest;
 	bool TestBool;
-	
+	CaveMapGen TestGen(50, 50, "temp.txt");
+
+
 	srand(time(NULL));
 	TestBool=ZombieTest.GetMoveBlock();
-	Test.ReadFromFile("MapTest.txt");
+	Test.ReadFromFile("temp.txt");
 	PlayerPosition = Test.GetPlayerPosition();
 	do
 	{
@@ -64,7 +67,6 @@ int main()
 		Test.Turn();
 		Test.Display();
 	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
-
 
 	return 0;
 }
