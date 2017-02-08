@@ -156,6 +156,22 @@ Position DijkstraMap::Min(Position Pos)
 		first = (Pos.y-1 > 0);
 		second = (Pos.y+1 < maxy);
 		Position Odp(0,0);
+		if (second)
+		{
+			if (Map[Pos.x][Pos.y + 1] < min)
+			{
+				min = Map[Pos.x][Pos.y + 1];
+				Odp.MoveTo(Pos.x, Pos.y + 1);
+			}
+		}
+		if (first)
+		{
+			if (Map[Pos.x][Pos.y - 1] < min)
+			{
+				min = Map[Pos.x][Pos.y - 1];
+				Odp.MoveTo(Pos.x, Pos.y - 1);
+			}
+		}
 		if (Pos.x + 1 < maxx)
 		{
 			if (Map[Pos.x + 1][Pos.y] < min)
@@ -180,22 +196,6 @@ Position DijkstraMap::Min(Position Pos)
 				}
 			}
 
-		}
-		if (second)
-		{
-			if (Map[Pos.x][Pos.y + 1] < min)
-			{
-				min = Map[Pos.x][Pos.y + 1];
-				Odp.MoveTo(Pos.x, Pos.y + 1);
-			}
-		}
-		if (first)
-		{
-			if (Map[Pos.x][Pos.y - 1] < min)
-			{
-				min = Map[Pos.x][Pos.y - 1];
-				Odp.MoveTo(Pos.x, Pos.y - 1);
-			}
 		}
 		if (Pos.x - 1 >= 0)
 		{

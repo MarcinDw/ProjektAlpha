@@ -53,6 +53,7 @@ int main()
 	Position PlayerPosition;
 	Gracz* Player;
 	Melee ZombieTest;
+	int debug;
 	bool HP=true;
 	bool Victory=true;
 	CaveMapGen TestGen(50, 50, "temp.txt");
@@ -68,7 +69,7 @@ int main()
 		Player = dynamic_cast<Gracz*>(Test.GetTab()[PlayerPosition.x][PlayerPosition.y]);
 		HP = Player->Alive();
 		Test.Turn();
-		if (Test.GetEnemies() == 0)
+		if ((debug=Test.GetEnemies()) == 0)
 		{
 			Victory = false;
 		}

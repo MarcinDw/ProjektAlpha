@@ -139,13 +139,14 @@ void CaveMapGen::Pisz()
 
 void CaveMapGen::AddXofY(char sign, int Number)
 {
-	for (int i = 0; i <= Number; i++)
+	for (int i = 0; i <= Number;)
 	{
 		int px = rand() % x;
 		int py = rand() % y;
 		if (Map[px][py] == ',')
 		{
 			Map[px][py] = sign;
+			i++;
 		}
 	}
 }

@@ -22,6 +22,7 @@ bool Control::WaitForInput(Pole*** Tab,Position &Player)
 {
 	Tab[Player.x][Player.y]->Tick(Player.x,Player.y,Tab);
 	ALLEGRO_EVENT eve;
+	al_flush_event_queue(que);
 	do
 	{
 		al_wait_for_event(que, &eve);

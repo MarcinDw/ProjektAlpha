@@ -86,7 +86,7 @@ void Melee::Interact(Pole * Source)
 bool Melee::TakeDamage(int DMG)
 {
 	HP -= DMG;
-	std::cout << "Zombie took " << DMG << " he has " << HP << " HP left." <<std::endl;
+	std::cout <<Name <<" took " << DMG << " he has " << HP << " HP left." <<std::endl;
 	if (HP > 0)
 	{
 		return false;
