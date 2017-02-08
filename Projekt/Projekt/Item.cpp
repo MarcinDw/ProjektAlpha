@@ -20,3 +20,9 @@ Item::Item()
 Item::~Item()
 {
 }
+
+std::ostream & operator<<(std::ostream & os, Item & A)
+{
+	os << "An Error Happened this should not be here";
+		return os;
+}

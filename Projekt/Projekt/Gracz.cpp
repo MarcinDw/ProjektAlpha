@@ -9,13 +9,15 @@ Gracz::Gracz()
 Gracz::Gracz(int x, int y) :Postac(x, y)
 {
 	Attk = 0;
-	Defense = 0;
+	Defense = 50;
 	DamageMin = 1;
 	DamageMax = 2;
 	Crit = 5;
 	CritMulti = 2;
 	MaxHP = 20;
 	HP = 20;
+	Regen = 3;
+	CurrentRegen = 3;
 }
 
 Gracz::~Gracz()
@@ -24,11 +26,17 @@ Gracz::~Gracz()
 
 void Gracz::Tick(int maxx, int maxy, Pole *** Tabela)
 {
-	if (HP < 1)
+	if (CurrentRegen == 0)
 	{
-		std::cout << "Gracz zostal pokonany";
-		al_rest(3);
-		exit(0);
+		if (HP < MaxHP)
+		{
+			HP++;
+		}
+		CurrentRegen = Regen;
+	}
+	else
+	{
+		CurrentRegen--;
 	}
 }
 
@@ -109,11 +117,39 @@ bool Gracz::Attack(Postac * P)
 	}
 }
 
+int Gracz::GetAC()
+{
+	if (EquipedArmor != NULL)
+	{
+		return Defense+(EquipedArmor->GetDef()*5);
+	}
+	else
+	{
+		return Defense;
+	}
+}
+
+bool Gracz::Alive()
+{
+	if (HP > 0)
+	{
+		return true;
+	}
+	return false;
+}
+
 Item * Gracz::Equip(Item* toeq)
 {
 	Item* Temp=NULL;
-	if(toeq)
-	Temp = EquipedWeapon;
-	EquipedWeapon = dynamic_cast<Weapon*>(toeq);
+	if ((toeq->GetType() == 'O') || (toeq->GetType() == 'T'))
+	{
+		Temp = EquipedWeapon;
+		EquipedWeapon = dynamic_cast<Weapon*>(toeq);
+	}
+	else
+	{
+		Temp = EquipedArmor;
+		EquipedArmor = dynamic_cast<Armor*>(toeq);
+	}
 	return Temp;
 }

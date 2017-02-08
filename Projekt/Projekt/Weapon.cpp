@@ -45,3 +45,9 @@ Weapon::Weapon()
 Weapon::~Weapon()
 {
 }
+
+std::ostream & operator<<(std::ostream & os, Weapon & A)
+{
+	os << A.Nazwa << " Attack:" << A.Attack << " Damage:" << A.MinDamage << "-" << A.MaxDamage << "Crit" << A.Crit << "% For" << A.CritMulti;
+	return os;
+}

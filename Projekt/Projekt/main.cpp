@@ -51,22 +51,44 @@ int main()
 	Map2D Test;
 	Control CTRL;
 	Position PlayerPosition;
+	Gracz* Player;
 	Melee ZombieTest;
-	bool TestBool;
+	bool HP=true;
+	bool Victory=true;
 	CaveMapGen TestGen(50, 50, "temp.txt");
 
 
 	srand(time(NULL));
-	TestBool=ZombieTest.GetMoveBlock();
 	Test.ReadFromFile("temp.txt");
 	PlayerPosition = Test.GetPlayerPosition();
 	do
 	{
 		//system("CLS");
 		Test.UpdatePlayerPosition(PlayerPosition);
+		Player = dynamic_cast<Gracz*>(Test.GetTab()[PlayerPosition.x][PlayerPosition.y]);
+		HP = Player->Alive();
 		Test.Turn();
+		if (Test.GetEnemies() == 0)
+		{
+			Victory = false;
+		}
 		Test.Display();
-	} while (CTRL.WaitForInput(Test.GetTab(),PlayerPosition));
-
+	} while ((CTRL.WaitForInput(Test.GetTab(),PlayerPosition))&&(HP)&&(Victory));
+	if (HP)
+	{
+		if (Victory)
+		{
+			std::cout << std::endl << "Good bye" << std::endl;
+		}
+		else
+		{
+			std::cout << std::endl << "You won YAY!!" << std::endl;
+		}
+	}
+	else 
+	{
+		std::cout << std::endl << "The Hero is Dead..." << std::endl;
+	}
+	al_rest(1);
 	return 0;
 }

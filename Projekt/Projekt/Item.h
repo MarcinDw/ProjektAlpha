@@ -11,6 +11,7 @@ protected:
 public:
 	virtual std::string GetName();
 	char GetType();
+	friend std::ostream& operator<<(std::ostream& os, Item& A);
 	Item();
 	~Item();
 };

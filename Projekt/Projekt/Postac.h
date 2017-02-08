@@ -2,11 +2,13 @@
 #include "Pole.h"
 #include "OpenSpace.h"
 #include "DijkstraMap.h"
+#include <string>
 class Postac :
 	public Pole
 {
 protected:
 	DijkstraMap* MoveMap=NULL;
+	std::string Name;
 	int Attk;
 	int Defense;
 	int HP;
@@ -28,7 +30,6 @@ public:
 	virtual bool Attack(Postac* P);
 	virtual void Deathrattle(Pole *** Tabela);
 	virtual void Move(Pole *** Tabela, Position cel);
-	virtual void Display();
 	virtual int GetAC();
 };
 

@@ -4,6 +4,7 @@
 #include <list>
 #include "Gracz.h"
 #include "Control.h"
+#include "Armor.h"
 class Box :
 	public Pole
 {

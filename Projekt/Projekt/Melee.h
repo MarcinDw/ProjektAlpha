@@ -8,13 +8,15 @@
 class Melee :
 	public Postac
 {
+protected:
+	ALLEGRO_CONFIG *EnemieConfig;
 public:
 	Melee();
 	Melee(int x, int y);
+	void LoadFromFile(char nazwa[]);
 	void Tick(int maxx, int maxy, Pole *** Tabela);
 	void Interact(Pole* Source);
 	bool TakeDamage(int DMG);
-	void Display();
 	char GetType();
 	~Melee();
 	void Deathrattle(Pole *** Tabela);

@@ -18,5 +18,6 @@ public:
 public:
 	Weapon();
 	~Weapon();
+	friend std::ostream& operator<<(std::ostream& os, Weapon& A);
 };
 

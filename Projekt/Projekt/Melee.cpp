@@ -8,14 +8,31 @@ Melee::Melee()
 
 Melee::Melee(int x, int y) :Postac(x, y)
 {
-	Attk = 0;
-	Defense = 0;
-	DamageMin = 1;
-	DamageMax = 4;
-	Crit = 5;
-	CritMulti = 2;
-	MaxHP = 20;
-	HP = 20;
+	EnemieConfig = al_load_config_file("EnemieConfig.txt");
+	int RNG = rand() % 2;
+	switch (RNG)
+	{
+	case 0:
+		LoadFromFile("Zombie");
+		break;
+	case 1:
+		LoadFromFile("Skeleton");
+		break;
+	}
+}
+
+void Melee::LoadFromFile(char nazwa[])
+{
+	Name = nazwa;
+	Attk = std::stoi(al_get_config_value(EnemieConfig, nazwa, "Attk"));
+	Defense = std::stoi(al_get_config_value(EnemieConfig, nazwa, "Defense"));
+	DamageMin = std::stoi(al_get_config_value(EnemieConfig, nazwa, "DamageMin"));
+	DamageMax = std::stoi(al_get_config_value(EnemieConfig, nazwa, "DamageMax"));
+	Crit = std::stoi(al_get_config_value(EnemieConfig, nazwa, "Crit"));
+	CritMulti = std::stoi(al_get_config_value(EnemieConfig, nazwa, "CritMulti"));
+	MaxHP = std::stoi(al_get_config_value(EnemieConfig, nazwa, "MaxHP"));
+	HP = MaxHP;
+	Type = *(al_get_config_value(EnemieConfig, nazwa, "Type"));
 }
 
 void Melee::Tick(int maxx, int maxy, Pole *** Tabela)
@@ -80,21 +97,9 @@ bool Melee::TakeDamage(int DMG)
 	}
 }
 
-void Melee::Display()
-{
-	if (Visible)
-	{
-		std::cout << 'z';
-	}
-	else
-	{
-		std::cout << ' ';
-	}
-}
-
 char Melee::GetType()
 {
-	return'z';
+	return Type;
 }
 
 

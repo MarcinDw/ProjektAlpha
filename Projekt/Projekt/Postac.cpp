@@ -81,9 +81,6 @@ void Postac::Move(Pole*** Tabela,Position cel)
 	Pos = cel;
 }
 
-void Postac::Display()
-{
-}
 
 int Postac::GetAC()
 {

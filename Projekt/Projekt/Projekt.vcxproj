@@ -160,6 +160,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="CaveMapGen.cpp" />
     <ClCompile Include="Control.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="CaveMapGen.h" />
     <ClInclude Include="Control.h" />

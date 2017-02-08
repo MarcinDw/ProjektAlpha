@@ -11,11 +11,17 @@ Map2D::Map2D()
 
 Map2D::~Map2D()
 {
+	/*
 	for (int i = 0; i < x; i++)
 	{
+		for (int j = 0; j < y; j++)
+		{
+			delete(Tab[x][y]);
+		}
 		delete(Tab[x]);
 	}
 	delete(Tab);
+	*/
 }
 
 bool Map2D::ReadFromFile(std::string Filename)
@@ -118,16 +124,19 @@ void Map2D::ListaTest()
 void Map2D::Turn()
 {
 	Lista.clear();
+	Targets = 0;
+	Lista.push_back(Tab[PlayerPosition.x][PlayerPosition.y]);
 	for (int i = 0; i < x; i++)
 	{
 		for (int j = 0; j < y; j++)
 		{
-			if (Tab[i][j]->GetType() == 'z')
+			if ((Tab[i][j]->GetType() == 'z') || (Tab[i][j]->GetType() == 's'))
 			{
 				if (Tab[i][j]->GetVisible() == 1)
 				{
 					Lista.push_back(Tab[i][j]);
 				}
+				Targets++;
 			}
 		}
 	}
@@ -193,4 +202,9 @@ void Map2D::Ray(float ix, float iy, float Range)
 			oy += iy;
 		}
 	};
+}
+
+int Map2D::GetEnemies()
+{
+	return Targets;
 }

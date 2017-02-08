@@ -16,6 +16,7 @@ protected:
 	Pole*** Tab;
 	int x;
 	int y;
+	int Targets;
 	Position PlayerPosition;
 	std::list<Pole*> Lista = {};
 	std::list<Pole*>::iterator it = Lista.begin();
@@ -36,5 +37,6 @@ public:
 	void Display();
 	void MapVision(float Range);
 	void Ray(float ix, float iy, float Range);
+	int GetEnemies();
 };
 
