@@ -1,0 +1,24 @@
+﻿  Armor.cpp
+  Box.cpp
+  CaveMapGen.cpp
+CaveMapGen.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+CaveMapGen.cpp(161): warning C4390: ';': empty controlled statement found; is this the intent?
+  Control.cpp
+  DijkstraMap.cpp
+  Gracz.cpp
+  Item.cpp
+  main.cpp
+  Map2D.cpp
+  Melee.cpp
+  OpenSpace.cpp
+  Pole.cpp
+  Position.cpp
+Position.cpp(22): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Postac.cpp
+  Wall.cpp
+  Weapon.cpp
+  Generating code
+  All 476 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Projekt.vcxproj -> E:\ProjektPO\ProjektAlpha\Projekt\Release\Projekt.exe
+  Projekt.vcxproj -> E:\ProjektPO\ProjektAlpha\Projekt\Release\Projekt.pdb (Full PDB)

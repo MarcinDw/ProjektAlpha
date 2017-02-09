@@ -1,0 +1,19 @@
+[Zombie]
+Attk = 10
+Defense = 10
+DamageMin = 1
+DamageMax = 4
+Crit = 5
+CritMulti = 2
+MaxHP = 10
+Type = z
+
+[Skeleton]
+Attk = 20
+Defense = 50
+DamageMin = 1
+DamageMax = 4
+Crit = 10
+CritMulti = 2
+MaxHP = 5
+Type = s

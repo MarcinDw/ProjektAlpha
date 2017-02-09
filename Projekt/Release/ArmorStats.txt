@@ -1,0 +1,6 @@
+[Chainshirt]
+Defense = 4
+[Breastplate]
+Defense = 6
+[Stoneplate]
+Defense = 9
