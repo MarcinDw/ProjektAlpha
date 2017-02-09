@@ -14,7 +14,7 @@ private:
 	void MakeNoise();
 	void SmoothTheWalls();
 	bool PlaceMonsters();
-	int Adcjecent(int cx,int cy,bool m);
+	int Adcjecent(int cx,int cy,bool m, int radious);
 	void Pisz();
 	void AddXofY(char sign, int Number);
 	void SaveToFile(std::string Nazwa);

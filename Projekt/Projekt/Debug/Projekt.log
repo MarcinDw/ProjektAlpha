@@ -1,3 +1,5 @@
-﻿  Melee.cpp
+﻿  CaveMapGen.cpp
+e:\projektpo\projektalpha\projekt\projekt\cavemapgen.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+e:\projektpo\projektalpha\projekt\projekt\cavemapgen.cpp(161): warning C4390: ';': empty controlled statement found; is this the intent?
   Projekt.vcxproj -> E:\ProjektPO\ProjektAlpha\Projekt\Debug\Projekt.exe
   Projekt.vcxproj -> E:\ProjektPO\ProjektAlpha\Projekt\Debug\Projekt.pdb (Partial PDB)

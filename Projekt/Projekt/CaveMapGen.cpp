@@ -45,7 +45,7 @@ void CaveMapGen::MakeNoise()
 void CaveMapGen::SmoothTheWalls()
 {
 	bool m=false;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 16; i++)
 	{
 		m = !m;
 		for (int j = 1; j < x - 1; j++)
@@ -54,7 +54,7 @@ void CaveMapGen::SmoothTheWalls()
 			{
 				if (m)
 				{
-					if (Adcjecent(j, k, m) >= 5)
+					if ((Adcjecent(j, k, m,1) >= 5)||(Adcjecent(j, k, m, 3) < 5))
 					{
 						Map2[j][k] = '#';
 					}
@@ -65,7 +65,7 @@ void CaveMapGen::SmoothTheWalls()
 				}
 				else
 				{
-					if (Adcjecent(j, k, m) >= 5)
+					if ((Adcjecent(j, k, m, 1) >= 5) || (Adcjecent(j, k, m, 3) < 5))
 					{
 						Map[j][k] = '#';
 					}
@@ -99,25 +99,28 @@ bool CaveMapGen::PlaceMonsters()
 	return false;
 }
 
-int CaveMapGen::Adcjecent(int cx, int cy, bool m)
+int CaveMapGen::Adcjecent(int cx, int cy, bool m,int radious)
 {
 	int sum=0;
-	for (int i = cx - 1; i < cx + 2; i++)
+	for (int i = cx - radious; i <= cx + radious; i++)
 	{
-		for (int j = cy - 1; j < cy + 2; j++)
+		for (int j = cy - radious; j <= cy + radious; j++)
 		{
-			if (m)
+			if ((i > 0) && (i < x) && (i > 0) && (i < y))
 			{
-				if (Map[i][j] == '#')
+				if (m)
 				{
-					sum++;
+					if (Map[i][j] == '#')
+					{
+						sum++;
+					}
 				}
-			}
-			else
-			{
-				if (Map2[i][j] == '#')
+				else
 				{
-					sum++;
+					if (Map2[i][j] == '#')
+					{
+						sum++;
+					}
 				}
 			}
 		}
@@ -191,14 +194,14 @@ CaveMapGen::CaveMapGen(int ix, int iy, std::string NazwaPliku)
 	y = iy;
 	MakeNewMap();
 	MakeNoise();
-	Pisz();
+	//Pisz();
 	std::cout << std::endl;
 	SmoothTheWalls();
-	Pisz();
+	//Pisz();
 	std::cout << std::endl;
 	PlaceMonsters();
 	CreateBorder();
-	Pisz();
+	//Pisz();
 	SaveToFile(NazwaPliku);
 }
 
