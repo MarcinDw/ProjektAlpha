@@ -29,7 +29,7 @@ void CaveMapGen::MakeNoise()
 			else
 			{
 				RNG = rand() % 100;
-				if (RNG < 45)
+				if (RNG < 40)
 				{
 					Map[i][j] = '#';
 				}
@@ -54,7 +54,7 @@ void CaveMapGen::SmoothTheWalls()
 			{
 				if (m)
 				{
-					if ((Adcjecent(j, k, m,1) >= 5)||(Adcjecent(j, k, m, 4) < 5))
+					if ((Adcjecent(j, k, m,1) >= 5)||(Adcjecent(j, k, m, 4) < 4))
 					{
 						Map2[j][k] = '#';
 					}
@@ -65,7 +65,7 @@ void CaveMapGen::SmoothTheWalls()
 				}
 				else
 				{
-					if ((Adcjecent(j, k, m, 1) >= 5) || (Adcjecent(j, k, m, 4) < 5))
+					if ((Adcjecent(j, k, m, 1) >= 5) || (Adcjecent(j, k, m, 4) < 4))
 					{
 						Map[j][k] = '#';
 					}
