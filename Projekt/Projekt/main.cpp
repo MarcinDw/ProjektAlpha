@@ -67,8 +67,8 @@ int main()
 		//system("CLS");
 		Test.UpdatePlayerPosition(PlayerPosition);
 		Player = dynamic_cast<Gracz*>(Test.GetTab()[PlayerPosition.x][PlayerPosition.y]);
-		HP = Player->Alive();
 		Test.Turn();
+		HP = Player->Alive();
 		if ((debug=Test.GetEnemies()) == 0)
 		{
 			Victory = false;
